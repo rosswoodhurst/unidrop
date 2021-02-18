@@ -14,7 +14,7 @@ export async function getStaticProps({ params }) {
   const { username, slug } = params;
   const userDoc = await getUserWithUsername(username);
 
-  let post;
+  let post = null;
   let path;
 
   if (userDoc) {
@@ -62,7 +62,7 @@ export default function Post(props) {
   return (
     <main className={styles.container}>
       <Metatags title={post.title} description={post.title} />
-      
+
       <section>
         <PostContent post={post} />
       </section>
