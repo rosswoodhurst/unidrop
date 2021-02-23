@@ -33,6 +33,11 @@ main {
   justify-content: center;
 }
 
+.content {
+  margin: auto;
+  max-width: 80vw;
+}
+
 h1 { font-size: 2rem; }
 h2 { font-size: 1.5rem; }
 h2 { font-size: 1.25rem; }
@@ -142,6 +147,10 @@ button:hover {
   filter: brightness(90%);
 }
 
+button:focus {
+  outline: none;
+}
+
 button:disabled,
 button[disabled]{
   filter: brightness(80%);
@@ -220,13 +229,10 @@ button.btn-logo {
 .card {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
-  margin: 1rem 0;
   background-color:rgb(15, 16, 19);
   border: 1px solid rgb(15, 16, 19);
   border-radius: 8px;
-  min-width: 80vw;
-  max-width: 80%;
+  width: 100%; 
   overflow: hidden;
   margin-left: auto;
   margin-right: auto;
@@ -239,8 +245,7 @@ button.btn-logo {
 }
 
 .card-snippet p {
-  padding: 10px;
-  max-width: 80%;
+  max-width: 100%;
   word-break: break-all;
   margin-left: auto;
   margin-right: auto;
@@ -292,18 +297,20 @@ button.btn-logo {
 }
 
 .card-info {
+
   color: white;
   background: var(--color-blue);
 }
 
 .card-footer {
-  padding: 10px;
   display: flex;
   align-items: center;
+  justify-content: ;
+  margin: auto;
 }
 
 .card-footer p {
-  padding-right: 1rem;
+  padding: 0.4rem;
 }
 
 /* Loader */

@@ -10,8 +10,10 @@ function MyApp({ Component, pageProps }) {
   return (
     <UserContext.Provider value={userData}>
       <Navbar />
-      <Component {...pageProps} />
-      <Toaster/>
+      <div className="content">
+        <Component {...pageProps} />
+        <Toaster />
+      </div>
     </UserContext.Provider>
   );
 }

@@ -57,7 +57,7 @@ export default function Home(props) {
       <Metatags title="Home Page" description="Get the latest posts on our site" />
 
       <div className="hero">
-        <h1><span className='strikeout'>Research</span> Shitposts For Uniswap Traders</h1>
+        <h1><span className='strikeout'>Research</span> Shitpost Community For Uniswap Traders</h1>
         <p>⚡ UNINOMICS is restricted to qualified <span className='strikeout'>investors</span> meme lords only ⚡</p>
       </div>
 

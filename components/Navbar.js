@@ -41,7 +41,7 @@ export default function Navbar() {
             </li>
             <li>
               <Link href="/admin">
-                <button className="btn-trans">write posts</button>
+                <button className="btn-trans">shit post</button>
               </Link>
             </li>
             <li>

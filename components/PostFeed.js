@@ -31,12 +31,12 @@ function PostItem({ post, admin = false }) {
         </div>
       </div>
       <div className="card-snippet">
-        <p>{post.content.substring(8, 200)}...</p>
+        <p>{post.content.substring(0, 200)}...</p>
       </div>
       <div className='card-footer'>
         <p>{wordCount} words 📰</p>
         <p>{minutesToRead} min read 👀</p>
-        <span className="push-left">🚀 {post.heartCount || 0} Likes</span>
+        <span className="push-left"> {post.heartCount || 0} {post.heartCount == 1 ? 'Like' : 'Likes'} 🚀</span>
       </div>
 
       {/* If admin view, show extra controls for user */}

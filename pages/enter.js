@@ -1,9 +1,9 @@
 import { auth, firestore, googleAuthProvider, twitterAUthProvider } from '../lib/firebase';
 import { UserContext } from '../lib/context';
 import Metatags from '../components/Metatags';
-
 import { useEffect, useState, useCallback, useContext } from 'react';
 import debounce from 'lodash.debounce';
+import { useRouter } from 'next/router'
 
 export default function Enter(props) {
   const { user, username } = useContext(UserContext);
@@ -12,6 +12,8 @@ export default function Enter(props) {
   // 2. user signed in, but missing username <UsernameForm />
   // 3. user signed in, has username <SignOutButton />
   return (
+
+
     <main>
       <Metatags title="Enter" description="Sign up for this amazing app!" />
       {user ? !username ? <UsernameForm /> : <SignOutButton /> : <SignInButton />}
@@ -56,9 +58,9 @@ function SignInButton() {
   return (
     <div className='cent-container'>
       <div className='cent'>
-        <button className="btn-google" onClick={signInWithGoogle}>
+        {/*         <button className="btn-google" onClick={signInWithGoogle}>
           <img src={'/google.png'} width="30px" /> Sign in with Google
-      </button>
+      </button> */}
         <button className="btn-twitter" onClick={signInWithTwitter}>
           <img src={'/twitter.png'} width="30px" /> Sign in with Twitter
       </button>
@@ -72,7 +74,12 @@ function SignInButton() {
 
 // Sign out button
 function SignOutButton() {
-  return <button onClick={() => auth.signOut()}>Sign Out</button>;
+  const router = useRouter()
+  router.push('/admin')
+
+  return <p>Loggin in...</p>
+
+  /* return <button onClick={() => auth.signOut()}>Sign Out</button>; */
 }
 
 // Username form
