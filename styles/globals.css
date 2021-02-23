@@ -236,6 +236,7 @@ button.btn-logo {
   overflow: hidden;
   margin-left: auto;
   margin-right: auto;
+  padding: 0.5rem;
 }
 
 .card-logo-user {
@@ -305,7 +306,7 @@ button.btn-logo {
 .card-footer {
   display: flex;
   align-items: center;
-  justify-content: ;
+  justify-content: center;
   margin: auto;
 }
 
