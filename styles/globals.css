@@ -1,19 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
 
 :root {
-  --color-bg: #eef0f1;
-  --color-text: #08090a;
+  --color-bg: rgb(15, 16, 19);;
+  --color-text: rgb(255, 255, 255);
   --color-blue: #3b49df;
   --color-red: #df3b3b;
   --color-green: #3bdf72;
-  --color-gray: #b5bdc4;
+  --color-gray: #52545C;
+  --color-purple:#a42fff;
+  --color-pink: #FF1F8A;
 }
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Dosis', sans-serif;
   background-color: var(--color-bg);
+  background: radial-gradient(50% 50% at 50% 50%, rgb(19,30,45) 0%, rgb(15, 16, 19) 100%);
   color: var(--color-text);
   margin-top: 50px;
 }
@@ -21,7 +27,10 @@ body {
 
 
 main {
-  padding: 1rem 10vw;
+  padding: 1rem;
+  margin: auto;
+  min-height: 80vh;
+  justify-content: center;
 }
 
 h1 { font-size: 2rem; }
@@ -57,20 +66,21 @@ fieldset {
 
 code {
   overflow-x: scroll;
+  background: transparent;
+  columns: var(--color-text);
 }
 
 /* Navbar */
 
 .navbar {
-  height: 70px;
   width: 100%;
-  background: white;
+  background-color:rgb(15, 16, 19);
   color: var(--colors-text);
   position: fixed;
   top: 0;
-  padding: 0 10vw;
+  padding: 15px 10vw;
   font-weight: bold;
-  border-bottom: 1px solid var(--color-gray);
+  height: auto;
   z-index: 99;
 }
 
@@ -96,23 +106,28 @@ code {
   
 }
 
+.navbar li:nth-child(2) {
+  margin-right: auto;
+  visibility: hidden;
+}
+
 /* Buttons */
 
 .btn, button {
-  background-color: var(--color-gray);
+  background-color: var(--color-purple);
   border: none;
   color: var(--color-text);
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
   display: flex;
   align-items: center;
   text-align: center;
   justify-content: center;
   text-decoration: none;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: bold;
   border-radius: 0.25rem;
   cursor: pointer;
-  margin: 0.5rem 1rem 0.5rem 0;
+  margin: 0.2rem 0.2rem 0.2rem 0.2rem;
 }
 
 @media only screen and (max-width: 768px) {
@@ -133,6 +148,12 @@ button[disabled]{
   cursor: not-allowed;
 }
 
+button.btn-pink {
+  background: linear-gradient(
+    128.17deg, #BD00FF -14.78%, #FF1F8A 110.05%);
+  color: white;
+}
+
 button.btn-blue {
   background-color: var(--color-blue);
   color: white;
@@ -148,14 +169,32 @@ button.btn-green {
   color: white;
 }
 
-button.btn-google {
-  background-color: white;
+button.btn-gray {
+  background-color: var(--color-gray);
+  color: white;
+}
+
+button.btn-trans {
+  background-color: transparent;
   color: var(--color-text);
+  font-size: larger;
+  font-family: 'Dosis', sans-serif;
+}
+
+
+
+button.btn-google {
+  background-color: transparent;
+  color: var(--color-text);
+  font-size: larger;
+  font-family: 'Dosis', sans-serif;
 }
 
 button.btn-twitter {
-  background-color: white;
+  background-color: transparent;
   color: var(--color-text);
+  font-size: larger;
+  font-family: 'Dosis', sans-serif;
 }
 
 .btn-google img {
@@ -179,11 +218,65 @@ button.btn-logo {
 /* Cards */
 
 .card {
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
   margin: 1rem 0;
-  background-color: white;
-  border: 1px solid var(--color-gray);
+  background-color:rgb(15, 16, 19);
+  border: 1px solid rgb(15, 16, 19);
   border-radius: 8px;
+  min-width: 80vw;
+  max-width: 80%;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-logo-user {
+  display: flex;
+  align-items: center;
+  height: auto;
+}
+
+.card-snippet p {
+  padding: 10px;
+  max-width: 80%;
+  word-break: break-all;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: large;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.card-snippet {
+  padding: 10px;
+}
+
+.post-logo img {
+  width: 50px;
+  height: auto;
+  border-radius: 50%;
+  margin-right: 1rem;
+  vertical-align: middle;
+}
+
+.post-title a{
+  margin: 0;
+  padding: 0;
+  font-size: 2em;
+}
+
+.post-user a {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  padding-bottom: 0.2rem;
+}
+
+.post-user h2 {
+  margin: 0;
+  padding: 0;
 }
 
 .card footer {
@@ -201,6 +294,16 @@ button.btn-logo {
 .card-info {
   color: white;
   background: var(--color-blue);
+}
+
+.card-footer {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.card-footer p {
+  padding-right: 1rem;
 }
 
 /* Loader */
@@ -228,9 +331,10 @@ input[type="file"] {
 .upload-snippet {
   width: 75%;
     margin-left: auto;
-    background: white;
+    background: transparent;
     padding: 5px;
     margin: 5px 0;
+    color: var(--color-text);
 }
 /* Utilities */
 
@@ -270,3 +374,67 @@ input[type="file"] {
 }
 
 .hidden { display:  none; }
+
+.unibutton {
+  display: flex;
+  align-items: center;
+}
+
+.unibutton a {
+  padding-left: 0.3rem;
+  font-size: large;
+}
+
+.hero h1 {
+  color: var(--color-text);
+  font-size: 3.75em;
+  line-height: 1em;
+  margin: 0 auto 30px auto;
+  max-width: 700px;
+  padding: 10px 24px 0 24px;
+  text-align: center;
+  font-family: 'Dosis', sans-serif;
+}
+
+.hero p {
+  color: var(--color-pink);
+  font-size: 1.5em;
+  line-height: 1em;
+  margin: 0 auto 30px auto;
+  max-width: 700px;
+  padding: 10px 24px 0 24px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.strikeout {
+  line-height: 1em;
+  position: relative;
+}
+.strikeout::after {
+  border-bottom: 0.08em solid var(--color-pink);
+  content: "";
+  left: 0;
+  margin-top: calc(0.125em / 2 * -1);
+  position: absolute;
+  right: 0;
+  top: 60%;
+}
+
+.pink-text {
+  color: var(--color-pink);
+}
+
+.cent-container {
+  height: 60vh;
+  position: relative;
+}
+
+.cent {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}

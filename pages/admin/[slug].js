@@ -42,9 +42,9 @@ function PostManager() {
 
           <aside>
             <h3>Tools</h3>
-            <button onClick={() => setPreview(!preview)}>{preview ? 'Edit' : 'Preview'}</button>
+            <button className="btn-pink" onClick={() => setPreview(!preview)}>{preview ? 'Edit' : 'Preview'}</button>
             <Link href={`/${post.username}/${post.slug}`}>
-              <button className="btn-blue">Live view</button>
+              <button className="btn-pink">Live view</button>
             </Link>
             <DeletePostButton postRef={postRef} />
           </aside>
@@ -80,8 +80,15 @@ function PostForm({ defaultValues, postRef, preview }) {
       )}
 
       <div className={preview ? styles.hidden : styles.controls}>
+        <p>Upload the project's logo, grab the link and add it to your Markdown...</p>
         <ImageUploader />
-
+        <br>
+        </br>
+        <Link href="https://guides.github.com/features/mastering-markdown/">
+          <a>Write your Markdown below. Need a refresher? Click here for Github's tutorial...</a>
+        </Link>
+        <br>
+        </br>
         <textarea
           name="content"
           ref={register({
@@ -98,7 +105,7 @@ function PostForm({ defaultValues, postRef, preview }) {
           <label>Published</label>
         </fieldset>
 
-        <button type="submit" className="btn-green" disabled={!isDirty || !isValid}>
+        <button type="submit" className="btn-pink" disabled={!isDirty || !isValid}>
           Save Changes
         </button>
       </div>
@@ -119,7 +126,7 @@ function DeletePostButton({ postRef }) {
   };
 
   return (
-    <button className="btn-red" onClick={deletePost}>
+    <button className="btn-pink" onClick={deletePost}>
       Delete
     </button>
   );

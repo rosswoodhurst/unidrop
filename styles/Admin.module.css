@@ -35,9 +35,13 @@
   outline: none;
   padding: 0.5rem;
   font-size: 1.25rem;
+  background-color: rgba(0,0,0,0.1);
+  color: var(--color-text);
 }
 
 .input {
+  background-color: rgba(0,0,0,0.1);
+  color: var(--color-text);
   outline: none;
   border: none;
   font-size: 2.5rem;

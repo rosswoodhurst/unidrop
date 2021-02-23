@@ -11,31 +11,40 @@ function PostItem({ post, admin = false }) {
 
   return (
     <div className="card">
-      <Link href={`/${post.username}`}>
-        <a>
-          <strong>By @{post.username}</strong>
-        </a>
-      </Link>
-
-      <Link href={`/${post.username}/${post.slug}`}>
-        <h2>
-          <a>{post.title}</a>
-        </h2>
-      </Link>
-
-      <footer>
-        <span>
-          {wordCount} words. {minutesToRead} min read
-        </span>
-        <span className="push-left">💗 {post.heartCount || 0} Hearts</span>
-      </footer>
+      <div className="card-logo-user">
+        <div className="post-logo">
+          <img src={post.photo || '/hacker.png'} />
+        </div>
+        <div className="card-container">
+          <div className="post-user">
+            <Link href={`/${post.username}/${post.slug}`}>
+              <h2 className="post-title">
+                <a>{post.title}</a>
+              </h2>
+            </Link>
+            <Link href={`/${post.username}`}>
+              <a>
+                <strong>By </strong><span className="pink-text"><strong>@{post.displayname ? post.displayname : post.username}</strong></span>
+              </a>
+            </Link>
+          </div>
+        </div>
+      </div>
+      <div className="card-snippet">
+        <p>{post.content.substring(8, 200)}...</p>
+      </div>
+      <div className='card-footer'>
+        <p>{wordCount} words 📰</p>
+        <p>{minutesToRead} min read 👀</p>
+        <span className="push-left">🚀 {post.heartCount || 0} Likes</span>
+      </div>
 
       {/* If admin view, show extra controls for user */}
       {admin && (
         <>
           <Link href={`/admin/${post.slug}`}>
             <h3>
-              <button className="btn-blue">Edit</button>
+              <button className="btn-trans">Edit</button>
             </h3>
           </Link>
 

@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { useContext } from 'react';
 import { UserContext } from '../lib/context';
 import { auth } from '../lib/firebase';
+import Unilogo from '../components/Unilogo'
 
 // Top navbar
 export default function Navbar() {
@@ -10,7 +11,7 @@ export default function Navbar() {
 
   const router = useRouter();
 
-  const signOut =  () => {
+  const signOut = () => {
     auth.signOut();
     router.reload();
   }
@@ -19,20 +20,28 @@ export default function Navbar() {
     <nav className="navbar">
       <ul>
         <li>
-          <Link href="/">
-            <button className="btn-logo">NXT</button>
+          <Link href="/" passHref>
+            <Unilogo />
+          </Link>
+        </li>
+        <li>
+
+        </li>
+        <li>
+          <Link href="/about">
+            <button className="btn-trans">about</button>
           </Link>
         </li>
 
         {/* user is signed-in and has username */}
         {username && (
           <>
-            <li className="push-left">
-              <button onClick={signOut}>Sign Out</button>
+            <li className="btn-trans">
+              <button className="btn-trans" onClick={signOut}>sign out</button>
             </li>
             <li>
               <Link href="/admin">
-                <button className="btn-blue">Write Posts</button>
+                <button className="btn-trans">write posts</button>
               </Link>
             </li>
             <li>
@@ -47,7 +56,7 @@ export default function Navbar() {
         {!username && (
           <li>
             <Link href="/enter">
-              <button className="btn-blue">Log in</button>
+              <button className="btn-trans">log in</button>
             </Link>
           </li>
         )}

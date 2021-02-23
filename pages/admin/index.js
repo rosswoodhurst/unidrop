@@ -52,6 +52,8 @@ function CreateNewPost() {
   const createPost = async (e) => {
     e.preventDefault();
     const uid = auth.currentUser.uid;
+    const displayname = auth.currentUser.displayName;
+    const photo = auth.currentUser.photoURL;
     const ref = firestore.collection('users').doc(uid).collection('posts').doc(slug);
 
     // Tip: give all fields a default value here
@@ -60,11 +62,13 @@ function CreateNewPost() {
       slug,
       uid,
       username,
+      displayname,
       published: false,
       content: '# hello world!',
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp(),
       heartCount: 0,
+      photo
     };
 
     await ref.set(data);
@@ -80,14 +84,14 @@ function CreateNewPost() {
       <input
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        placeholder="My Awesome Article!"
+        placeholder="Name of the project / token"
         className={styles.input}
       />
       <p>
         <strong>Slug:</strong> {slug}
       </p>
-      <button type="submit" disabled={!isValid} className="btn-green">
-        Create New Post
+      <button type="submit" disabled={!isValid} className="btn-pink">
+        Add the details..
       </button>
     </form>
   );

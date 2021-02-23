@@ -54,17 +54,19 @@ function SignInButton() {
   }
 
   return (
-    <>
-      <button className="btn-google" onClick={signInWithGoogle}>
-        <img src={'/google.png'} width="30px" /> Sign in with Google
+    <div className='cent-container'>
+      <div className='cent'>
+        <button className="btn-google" onClick={signInWithGoogle}>
+          <img src={'/google.png'} width="30px" /> Sign in with Google
       </button>
-      <button className="btn-twitter" onClick={signInWithTwitter}>
-        <img src={'/twitter.png'} width="30px" /> Sign in with Twitter
+        <button className="btn-twitter" onClick={signInWithTwitter}>
+          <img src={'/twitter.png'} width="30px" /> Sign in with Twitter
       </button>
-      {/*       <button onClick={() => auth.signInAnonymously()}>
+        {/*       <button onClick={() => auth.signInAnonymously()}>
         Sign in Anonymously
       </button> */}
-    </>
+      </div>
+    </div>
   );
 }
 
@@ -143,7 +145,7 @@ function UsernameForm() {
         <form onSubmit={onSubmit}>
           <input name="username" placeholder="myname" value={formValue} onChange={onChange} />
           <UsernameMessage username={formValue} isValid={isValid} loading={loading} />
-          <button type="submit" className="btn-green" disabled={!isValid}>
+          <button type="submit" className="btn-trans" disabled={!isValid}>
             Choose
           </button>
 

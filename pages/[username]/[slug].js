@@ -69,13 +69,13 @@ export default function Post(props) {
 
       <aside className="card">
         <p>
-          <strong>{post.heartCount || 0} 🤍</strong>
+          <strong>{post.heartCount || 0} 🚀</strong>
         </p>
 
         <AuthCheck
           fallback={
             <Link href="/enter">
-              <button>💗 Sign Up</button>
+              <button>🚀 Sign Up</button>
             </Link>
           }
         >
@@ -84,7 +84,7 @@ export default function Post(props) {
 
         {currentUser?.uid === post.uid && (
           <Link href={`/admin/${post.slug}`}>
-            <button className="btn-blue">Edit Post</button>
+            <button className="btn-pink">Edit Post</button>
           </Link>
         )}
       </aside>
