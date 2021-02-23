@@ -246,7 +246,7 @@ button.btn-logo {
   height: auto;
 }
 
-.card-snippet p {
+.card-snippet a {
   max-width: 100%;
   word-break: break-all;
   margin-left: auto;

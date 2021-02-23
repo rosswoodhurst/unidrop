@@ -31,7 +31,9 @@ function PostItem({ post, admin = false }) {
         </div>
       </div>
       <div className="card-snippet">
-        <p>{post.content.substring(0, 200)}...</p>
+        <Link href={`/${post.username}/${post.slug}`}>
+          <a>{post.content.substring(0, 200)}...</a>
+        </Link>
       </div>
       <div className='card-footer'>
         <p>{wordCount} words 📰</p>
