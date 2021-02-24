@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
 :root {
   --color-bg: rgb(15, 16, 19);;
   --color-text: rgb(255, 255, 255);
@@ -251,7 +251,7 @@ button.btn-logo {
   word-break: break-all;
   margin-left: auto;
   margin-right: auto;
-  font-size: large;
+  font-size: x-large;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -397,10 +397,9 @@ input[type="file"] {
 .hero h1 {
   color: var(--color-text);
   font-size: 3.75em;
-  line-height: 1em;
-  margin: 0 auto 30px auto;
+  margin: auto;
   max-width: 700px;
-  padding: 10px 24px 0 24px;
+  padding: 10px 10px 0 10px;
   text-align: center;
   font-family: 'Dosis', sans-serif;
 }
@@ -420,14 +419,21 @@ input[type="file"] {
   line-height: 1em;
   position: relative;
 }
-.strikeout::after {
-  border-bottom: 0.08em solid var(--color-pink);
-  content: "";
-  left: 0;
-  margin-top: calc(0.125em / 2 * -1);
-  position: absolute;
-  right: 0;
-  top: 60%;
+
+.strike {
+  color: var(--color-text);
+  font-size: 3.75em;
+  line-height: 1em;
+  margin: 0 auto 30px auto;
+  max-width: 700px;
+  padding: 10px 24px 0 24px;
+  text-align: center;
+  font-family: 'Dosis', sans-serif;
+}
+
+
+.hero s {
+  text-decoration-color: var(--color-pink);
 }
 
 .pink-text {
@@ -446,4 +452,10 @@ input[type="file"] {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+.shit {
+  font-family: 'Finger Paint', cursive;
+  color: var(--color-pink);
+  font-size: 0.75em;
 }

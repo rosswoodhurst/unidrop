@@ -5,7 +5,7 @@ const Unilogo = React.forwardRef(({ onClick, href }, ref) => {
         <div className="unibutton">
             <img src={'/uni.png'} />
             <a href={href} onClick={onClick} ref={ref}>
-                UNINOMICS
+                Trading Unicorns
       </a>
         </div>
     )
