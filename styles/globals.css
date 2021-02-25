@@ -421,32 +421,16 @@ input[type="file"] {
 .hero p {
   color: var(--color-pink);
   font-size: 1.5em;
-  margin: 0 auto 30px auto;
+  margin: auto;
   max-width: 700px;
-  padding: 10px 24px 0 24px;
   text-align: center;
   overflow: hidden;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
-
-.strikeout {
-  line-height: 1em;
-  position: relative;
-}
-
-.strike {
-  color: var(--color-text);
-  font-size: 3.75em;
-  line-height: 1em;
-  margin: 0 auto 30px auto;
-  max-width: 700px;
-  padding: 10px 24px 0 24px;
-  text-align: center;
-  font-family: 'Dosis', sans-serif;
-}
-
 
 .hero s {
-  text-decoration-color: var(--color-pink);
+  text-decoration-color: var(--color-text);
 }
 
 .pink-text {
@@ -482,4 +466,40 @@ input[type="file"] {
     128.17deg, #BD00FF -14.78%, #FF1F8A 110.05%);
   color: white;
   margin: 10px;
+}
+
+button.btn-about {
+  background-color: transparent;
+  color: var(--color-text);
+  font-size: larger;
+  font-family: 'Dosis', sans-serif;
+}
+
+button.btn-login {
+  background-color: transparent;
+  color: var(--color-text);
+  font-size: larger;
+  font-family: 'Dosis', sans-serif;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+button.btn-shitpost {
+  background-color: transparent;
+  color: var(--color-text);
+  font-size: larger;
+  font-family: 'Dosis', sans-serif;
+}
+
+button.btn-signout {
+  background-color: transparent;
+  color: var(--color-text);
+  font-size: larger;
+  font-family: 'Dosis', sans-serif;
+}
+
+@media only screen and (max-width: 768px) {
+  .btn-about {
+    visibility: hidden;
+  }
 }

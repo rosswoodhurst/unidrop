@@ -5,7 +5,7 @@ const Unilogo = React.forwardRef(({ onClick, href }, ref) => {
         <div className="unibutton">
             <img src={'/degenlogo.png'} />
             <a href={href} onClick={onClick} ref={ref}>
-                DEGENERATE
+                degenerate
       </a>
         </div>
     )

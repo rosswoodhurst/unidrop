@@ -14,6 +14,7 @@ export default function Navbar() {
   const signOut = () => {
     auth.signOut();
     router.reload();
+    router.push("/")
   }
 
   return (
@@ -29,7 +30,7 @@ export default function Navbar() {
         </li>
         <li>
           <Link href="/about">
-            <button className="btn-trans">about</button>
+            <button className="btn-about">about</button>
           </Link>
         </li>
 
@@ -37,11 +38,11 @@ export default function Navbar() {
         {username && (
           <>
             <li className="btn-trans">
-              <button className="btn-trans" onClick={signOut}>sign out</button>
+              <button className="btn-signout" onClick={signOut}>sign out</button>
             </li>
             <li>
               <Link href="/admin">
-                <button className="btn-trans">shit post</button>
+                <button className="btn-shitpost">shit post</button>
               </Link>
             </li>
             <li>
@@ -56,7 +57,7 @@ export default function Navbar() {
         {!username && (
           <li>
             <Link href="/enter">
-              <button className="btn-trans">log in</button>
+              <button className="btn-login">log in / sign up</button>
             </Link>
           </li>
         )}

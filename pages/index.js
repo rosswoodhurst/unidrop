@@ -57,8 +57,8 @@ export default function Home(props) {
       <Metatags title="Home Page" description="Get the latest posts on our site" />
 
       <div className="hero">
-        <h1><s>Technical Analysis</s><span className='shit'> Shitposts</span> for Crypto Traders</h1>
-        <p>⚡ Degenerate.co is restricted to qualified <s>investors</s> meme lords only ⚡</p>
+        <h1>Mastering The Dicipline Of Crypto Trading</h1>
+        <p>Share knowlege, ask questions, meme the heck out of your shitcoin</p>
       </div>
 
       <PostFeed posts={posts} />
