@@ -68,7 +68,8 @@ function CreateNewPost() {
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp(),
       heartCount: 0,
-      photo
+      photo,
+      comment: {}
     };
 
     await ref.set(data);
@@ -86,7 +87,7 @@ function CreateNewPost() {
         <input
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          placeholder="Name of the project / token"
+          placeholder="Snappy Shitpost Title..."
           className={styles.input}
         />
         <p>

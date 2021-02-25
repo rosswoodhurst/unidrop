@@ -1,5 +1,6 @@
 import styles from '../../styles/Post.module.css';
 import PostContent from '../../components/PostContent';
+import Comment from '../../components/Comment';
 import HeartButton from '../../components/HeartButton';
 import AuthCheck from '../../components/AuthCheck';
 import Metatags from '../../components/Metatags';
@@ -9,6 +10,7 @@ import { firestore, getUserWithUsername, postToJSON } from '../../lib/firebase';
 import Link from 'next/link';
 import { useDocumentData } from 'react-firebase-hooks/firestore';
 import { useContext } from 'react';
+import CommentList from '../../components/CommentList';
 
 export async function getStaticProps({ params }) {
   const { username, slug } = params;
@@ -16,16 +18,26 @@ export async function getStaticProps({ params }) {
 
   let post;
   let path;
+  let thecomments;
+  let comments = [];
 
   if (userDoc) {
     const postRef = userDoc.ref.collection('posts').doc(slug);
     post = postToJSON(await postRef.get());
 
     path = postRef.path;
+
+    await postRef.collection('comment').get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        comments.push(doc.data());
+      });
+    });
+
   }
 
   return {
-    props: { post, path },
+    props: { post, path, comments },
     revalidate: 100,
   };
 }
@@ -56,6 +68,7 @@ export default function Post(props) {
   const [realtimePost] = useDocumentData(postRef);
 
   const post = realtimePost || props.post;
+  const comments = props.comments
 
   const { user: currentUser } = useContext(UserContext);
 
@@ -65,6 +78,13 @@ export default function Post(props) {
 
       <section>
         <PostContent post={post} />
+
+        <AuthCheck>
+          <Comment postRef={postRef} />
+        </AuthCheck>
+
+        <CommentList post={post} comments={comments} />
+
       </section>
 
       <aside className="card">

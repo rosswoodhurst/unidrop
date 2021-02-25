@@ -315,6 +315,20 @@ button.btn-logo {
   padding: 0.4rem;
 }
 
+.comment-name {
+  margin: 5px;
+}
+
+.comment-name h2 {
+  padding-bottom: 0.5em;
+  margin: 0;
+}
+
+.comment-name p {
+  padding: 0;
+  margin: 0;
+}
+
 /* Loader */
 
 .loader {
@@ -352,7 +366,7 @@ input[type="file"] {
 }
 
 .text-sm {
-  font-size: 0.85rem;
+  font-size: large;
 }
 
 .text-danger {
@@ -407,7 +421,6 @@ input[type="file"] {
 .hero p {
   color: var(--color-pink);
   font-size: 1.5em;
-  line-height: 1em;
   margin: 0 auto 30px auto;
   max-width: 700px;
   padding: 10px 24px 0 24px;
@@ -440,6 +453,10 @@ input[type="file"] {
   color: var(--color-pink);
 }
 
+.pink-text {
+  font-size: large;
+}
+
 .cent-container {
   height: 60vh;
   position: relative;
@@ -458,4 +475,11 @@ input[type="file"] {
   font-family: 'Finger Paint', cursive;
   color: var(--color-pink);
   font-size: 0.75em;
+}
+
+.btn-comment {
+  background: linear-gradient(
+    128.17deg, #BD00FF -14.78%, #FF1F8A 110.05%);
+  color: white;
+  margin: 10px;
 }

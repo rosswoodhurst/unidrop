@@ -3,9 +3,9 @@ import React from 'react'
 const Unilogo = React.forwardRef(({ onClick, href }, ref) => {
     return (
         <div className="unibutton">
-            <img src={'/uni.png'} />
+            <img src={'/degenlogo.png'} />
             <a href={href} onClick={onClick} ref={ref}>
-                Trading Unicorns
+                DEGENERATE
       </a>
         </div>
     )
