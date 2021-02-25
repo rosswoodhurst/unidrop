@@ -15,7 +15,9 @@ export default function PostContent({ post }) {
         </Link>{' '}
         on {createdAt.toString()}
       </span>
-      <ReactMarkdown>{post?.content}</ReactMarkdown>
+      <div className="text-lg">
+        <ReactMarkdown>{post?.content}</ReactMarkdown>
+      </div>
     </div>
   );
 }

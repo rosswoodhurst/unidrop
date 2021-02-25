@@ -369,6 +369,10 @@ input[type="file"] {
   font-size: large;
 }
 
+.text-lg {
+  font-size: larger;
+}
+
 .text-danger {
   font-weight: bold;
   color: var(--color-red);
