@@ -54,11 +54,11 @@ export default function Home(props) {
 
   return (
     <main>
-      <Metatags title="Home Page" description="Get the latest posts on our site" />
+      <Metatags title="degenerate.co" description="Mastering The Dicipline Of Crypto Trading" />
 
       <div className="hero">
         <h1>Mastering The Dicipline Of Crypto Trading</h1>
-        <p>Share knowlege, ask questions, meme the heck out of your shitcoin</p>
+        <p>Share knowlege, ask questions, meme the hell out of your idea</p>
       </div>
 
       <PostFeed posts={posts} />
